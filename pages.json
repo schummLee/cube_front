@@ -51,6 +51,13 @@
                 "navigationBarTitleText": "我的消息",
 				"navigationStyle": "default"
             }
+        },
+		{
+            "path": "pages/mine/message/message",
+            "style": {
+                "navigationBarTitleText": "我的消息",
+				"navigationStyle": "default"
+            }
         }
     ],
 	"globalStyle": {

@@ -17,6 +17,13 @@
 					}
 				})
 				// #endif
+				
+				// #ifdef H5
+				uni.showToast({
+					title: 'H5模式不支持',
+					icon: 'none'
+				})
+				// #endif
 			})
 		},
 		onShow: function() {

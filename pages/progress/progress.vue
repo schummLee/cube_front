@@ -21,11 +21,11 @@
 		data() {
 			return {
 				tabIndex: 0,
-				tabList: ['选项1', '选项2', '选项3', '选项4', '选项5'],
+				tabList: ['任务', '挑战', '支线', '副本', '殿堂'],
 				stepIndex: 0,
 				stepOptions: [{
-					title:'PRESENTATION',
-					desc:'presantoton of tho fravel ui Dekits projoct to eEron inaho'
+					title:'击败攻击小镇的敌人',
+					desc:'任务奖励 ： 50 金币'
 					// 10:00 am-11:25 am
 				}, {
 					title:'Meetings',
@@ -42,9 +42,22 @@
 				}]
 			}
 		},
+		onLoad() {
+			this.tabIndex = uni.getStorageSync("stepIndex") || 0
+		},
 		methods: {
 			onTabChange(index) {
-				this.tabIndex = index
+				this.tabIndex = index,
+				this.stepIndex = index,
+				uni.setStorageSync("stepIndex", index)
+				
+				uni.request({
+					url: '',
+					method: 'GET',
+					success: (res) => {
+						console.log(res)
+					}
+				})
 			},
 		}
 	}
